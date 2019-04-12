@@ -3,8 +3,11 @@ const express = require("express");
 const expHbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const path = require("path");
-// Imported Files
+// Imported routes
 const rootRouter = require("./app/routes/root.js");
+const gigRouter = require("./app/routes/gig.js");
+
+// Import database
 const db = require("../data/database/db.js");
 
 // Create express instance
@@ -15,8 +18,9 @@ db.authenticate()
   .then(() => console.log("Database connected..."))
   .catch(error => console.error("error", error));
 
-// Routes
+// Use Routers
 app.use("/", rootRouter);
+app.use("/gigs", gigRouter);
 
 // Exports
 module.exports = app;

@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const { ROOT } = require("../controllers/root/index.js");
+const { LIST } = require("../controllers/gig/index.js");
 
 // Create Router instance
 const router = new Router();
 
 // Declare routes
-router.get("/", ROOT);
+router.get("/", LIST);
 
 // Export file
 module.exports = router;
