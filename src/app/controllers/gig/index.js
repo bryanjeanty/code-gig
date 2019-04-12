@@ -1,14 +1,6 @@
-// Import DB
-const db = require("../../../../data/database/db.js");
-// Import Gig model
-const Gig = require("../../models/gig.js");
+// Import Actions
+const LIST = require("./LIST.js");
+const CREATE = require("./CREATE.js");
 
-const LIST = (req, res, next) =>
-  Gig.findAll()
-    .then(gigs => {
-      console.log(gigs);
-      return res.sendStatus(200);
-    })
-    .catch(error => console.error("error", error));
-
-module.exports = { LIST };
+// Export actions as an object
+module.exports = { LIST, CREATE };
