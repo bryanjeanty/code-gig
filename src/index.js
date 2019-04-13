@@ -13,6 +13,10 @@ const db = require("../data/database/db.js");
 // Create express instance
 const app = express();
 
+// Handlebars
+app.engine("handlebars", expHbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Test DB
 db.authenticate()
   .then(() => console.log("Database connected..."))
