@@ -17,6 +17,9 @@ const app = express();
 app.engine("handlebars", expHbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Set static folder
+app.use(express.static(path.join(__dirname, "../public")));
+
 // Test DB
 db.authenticate()
   .then(() => console.log("Database connected..."))
