@@ -1,3 +1,3 @@
-const ROOT = (req, res, next) => res.send("INDEX");
+const ROOT = (req, res, next) => res.render("index", { layout: "landing" });
 
 module.exports = { ROOT };
