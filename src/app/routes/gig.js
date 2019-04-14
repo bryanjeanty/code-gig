@@ -1,12 +1,13 @@
 const { Router } = require("express");
-const { LIST, CREATE } = require("../controllers/gig/index.js");
+const { LIST, NEW, CREATE } = require("../controllers/gig/index.js");
 
 // Create Router instance
 const router = new Router();
 
 // Declare routes
 router.get("/", LIST);
-router.get("/add", CREATE);
+router.get("/add", NEW);
+router.post("/add", CREATE);
 
 // Export file
 module.exports = router;
